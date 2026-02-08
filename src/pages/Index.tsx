@@ -11,11 +11,11 @@ const Index = () => {
       <FloatingHearts />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div className="fixed inset-0 -z-10">
-          <img src={valentineBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/70" />
-        </div>
+      <section 
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${valentineBg})` }}
+      >
+        <div className="absolute inset-0 bg-background/70" />
         <div className="relative z-20 text-center px-4 max-w-2xl">
           <p className="text-gold text-lg mb-2 tracking-widest uppercase" style={{ fontFamily: "var(--font-body)", color: "hsl(40 70% 55%)" }}>
             Happy Valentine's Day
