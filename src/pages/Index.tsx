@@ -1,5 +1,6 @@
 import valentineBg from "@/assets/valentine-bg.jpg";
 import FloatingHearts from "@/components/FloatingHearts";
+import MainPhoto from "@/components/MainPhoto";
 import PhotoSection from "@/components/PhotoSection";
 import DateSection from "@/components/DateSection";
 import HiddenLetter from "@/components/HiddenLetter";
@@ -34,6 +35,9 @@ const Index = () => {
           </a>
         </div>
       </section>
+
+      {/* Main Couple Photo */}
+      <MainPhoto />
 
       {/* Photo Gallery */}
       <PhotoSection />
