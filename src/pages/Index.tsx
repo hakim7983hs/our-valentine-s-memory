@@ -1,12 +1,57 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import valentineBg from "@/assets/valentine-bg.jpg";
+import FloatingHearts from "@/components/FloatingHearts";
+import PhotoSection from "@/components/PhotoSection";
+import DateSection from "@/components/DateSection";
+import HiddenLetter from "@/components/HiddenLetter";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <FloatingHearts />
+
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        <div className="absolute inset-0">
+          <img src={valentineBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/70" />
+        </div>
+        <div className="relative z-20 text-center px-4 max-w-2xl">
+          <p className="text-gold text-lg mb-2 tracking-widest uppercase" style={{ fontFamily: "var(--font-body)", color: "hsl(40 70% 55%)" }}>
+            Happy Valentine's Day
+          </p>
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+            You Are My <span className="text-primary italic">Forever</span>
+          </h1>
+          <p className="text-muted-foreground text-xl md:text-2xl mb-8" style={{ fontFamily: "var(--font-body)" }}>
+            Every love story is beautiful, but ours is my favorite ♥
+          </p>
+          <a
+            href="#letter"
+            className="inline-block bg-gradient-gold text-secondary-foreground font-semibold px-8 py-3 rounded-full shadow-gold hover:scale-105 transition-transform duration-300"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Read My Letter 💌
+          </a>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <PhotoSection />
+
+      {/* Date Info */}
+      <DateSection />
+
+      {/* Hidden Love Letter */}
+      <div id="letter">
+        <HiddenLetter />
       </div>
+
+      {/* Footer */}
+      <footer className="py-10 text-center">
+        <p className="text-gold text-2xl italic" style={{ fontFamily: "var(--font-display)", color: "hsl(40 70% 55%)" }}>
+          Made with ♥ just for you
+        </p>
+      </footer>
     </div>
   );
 };
