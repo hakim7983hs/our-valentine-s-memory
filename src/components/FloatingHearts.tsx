@@ -4,12 +4,12 @@ const FloatingHearts = () => {
   const [hearts, setHearts] = useState<{ id: number; left: number; delay: number; duration: number; size: number }[]>([]);
 
   useEffect(() => {
-    const generated = Array.from({ length: 20 }, (_, i) => ({
+    const generated = Array.from({ length: 15 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 10,
       duration: 8 + Math.random() * 10,
-      size: 24 + Math.random() * 36,
+      size: 12 + Math.random() * 16,
     }));
     setHearts(generated);
   }, []);
