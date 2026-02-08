@@ -1,5 +1,11 @@
 import couplePlaceholder from "@/assets/couple-placeholder.jpg";
 
+const photos = [
+  { id: 1, title: "Our First Date", description: "The moment I knew you were the one. That smile changed everything." },
+  { id: 2, title: "Adventures Together", description: "Every journey is better with you by my side." },
+  { id: 3, title: "Forever Moments", description: "These are the memories I'll treasure for a lifetime." },
+];
+
 const PhotoSection = () => {
   return (
     <section className="py-16 px-4 flex flex-col items-center">
@@ -10,27 +16,34 @@ const PhotoSection = () => {
         Every picture tells our love story
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
-        {[1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="group relative overflow-hidden rounded-2xl border-2 border-gold/20 shadow-romantic hover:shadow-gold transition-all duration-500 hover:scale-[1.03] aspect-square"
-          >
-            <img
-              src={couplePlaceholder}
-              alt={`Our memory ${i}`}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-4">
-              <span className="text-foreground text-sm font-medium" style={{ fontFamily: "var(--font-display)" }}>
-                ♥ Our Memory
-              </span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
+        {photos.map((photo) => (
+          <div key={photo.id} className="flex flex-col">
+            <div className="group relative overflow-hidden rounded-2xl border-2 border-gold/20 shadow-romantic hover:shadow-gold transition-all duration-500 hover:scale-[1.03] aspect-square">
+              <img
+                src={couplePlaceholder}
+                alt={photo.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-4">
+                <span className="text-foreground text-sm font-medium" style={{ fontFamily: "var(--font-display)" }}>
+                  ♥ {photo.title}
+                </span>
+              </div>
+            </div>
+            <div className="mt-4 text-center px-2">
+              <h3 className="text-gold text-lg font-semibold mb-1" style={{ fontFamily: "var(--font-display)", color: "hsl(40 70% 55%)" }}>
+                {photo.title}
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                {photo.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
-      <p className="text-muted-foreground text-sm mt-6 italic">
+      <p className="text-muted-foreground text-sm mt-8 italic">
         Replace these with your own photos ♥
       </p>
     </section>
